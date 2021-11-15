@@ -13,7 +13,6 @@
 		A58CD4082742CA1400C16F0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4062742CA1400C16F0F /* Main.storyboard */; };
 		A58CD40A2742CA1800C16F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4092742CA1800C16F0F /* Assets.xcassets */; };
 		A58CD40D2742CA1800C16F0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58CD40B2742CA1800C16F0F /* LaunchScreen.storyboard */; };
-		A58CD4192742CB1700C16F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD4182742CB1700C16F0F /* User.swift */; };
 		A58CD41B2742CB6D00C16F0F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD41A2742CB6D00C16F0F /* Action.swift */; };
 		A58CD41D2742CB9000C16F0F /* Accumulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD41C2742CB9000C16F0F /* Accumulation.swift */; };
 		A58CD4282742CCB200C16F0F /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD41F2742CCB100C16F0F /* SF-Pro-Rounded-Regular.otf */; };
@@ -25,6 +24,7 @@
 		A58CD42E2742CCB300C16F0F /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4252742CCB200C16F0F /* SF-Pro-Rounded-Bold.otf */; };
 		A58CD42F2742CCB300C16F0F /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */; };
 		A58CD4302742CCB300C16F0F /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */; };
+		A58CD4332742D86800C16F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD4322742D86800C16F0F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,6 @@
 		A58CD4092742CA1800C16F0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58CD40C2742CA1800C16F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58CD40E2742CA1800C16F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A58CD4182742CB1700C16F0F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A58CD41A2742CB6D00C16F0F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		A58CD41C2742CB9000C16F0F /* Accumulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accumulation.swift; sourceTree = "<group>"; };
 		A58CD41F2742CCB100C16F0F /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		A58CD4252742CCB200C16F0F /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
 		A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		A58CD4322742D86800C16F0F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +103,9 @@
 		A58CD4152742CA9D00C16F0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A58CD4182742CB1700C16F0F /* User.swift */,
 				A58CD41A2742CB6D00C16F0F /* Action.swift */,
 				A58CD41C2742CB9000C16F0F /* Accumulation.swift */,
+				A58CD4322742D86800C16F0F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,8 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58CD4052742CA1400C16F0F /* ViewController.swift in Sources */,
-				A58CD4192742CB1700C16F0F /* User.swift in Sources */,
 				A58CD41D2742CB9000C16F0F /* Accumulation.swift in Sources */,
+				A58CD4332742D86800C16F0F /* User.swift in Sources */,
 				A58CD4012742CA1400C16F0F /* AppDelegate.swift in Sources */,
 				A58CD41B2742CB6D00C16F0F /* Action.swift in Sources */,
 				A58CD4032742CA1400C16F0F /* SceneDelegate.swift in Sources */,
