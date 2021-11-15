@@ -13,6 +13,18 @@
 		A58CD4082742CA1400C16F0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4062742CA1400C16F0F /* Main.storyboard */; };
 		A58CD40A2742CA1800C16F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4092742CA1800C16F0F /* Assets.xcassets */; };
 		A58CD40D2742CA1800C16F0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58CD40B2742CA1800C16F0F /* LaunchScreen.storyboard */; };
+		A58CD4192742CB1700C16F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD4182742CB1700C16F0F /* User.swift */; };
+		A58CD41B2742CB6D00C16F0F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD41A2742CB6D00C16F0F /* Action.swift */; };
+		A58CD41D2742CB9000C16F0F /* Accumulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD41C2742CB9000C16F0F /* Accumulation.swift */; };
+		A58CD4282742CCB200C16F0F /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD41F2742CCB100C16F0F /* SF-Pro-Rounded-Regular.otf */; };
+		A58CD4292742CCB200C16F0F /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4202742CCB100C16F0F /* SF-Pro-Rounded-Thin.otf */; };
+		A58CD42A2742CCB200C16F0F /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4212742CCB100C16F0F /* SF-Pro-Rounded-Black.otf */; };
+		A58CD42B2742CCB200C16F0F /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4222742CCB100C16F0F /* SF-Pro-Rounded-Ultralight.otf */; };
+		A58CD42C2742CCB200C16F0F /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4232742CCB200C16F0F /* SF-Pro-Rounded-Medium.otf */; };
+		A58CD42D2742CCB200C16F0F /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4242742CCB200C16F0F /* SF-Pro-Rounded-Light.otf */; };
+		A58CD42E2742CCB300C16F0F /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4252742CCB200C16F0F /* SF-Pro-Rounded-Bold.otf */; };
+		A58CD42F2742CCB300C16F0F /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */; };
+		A58CD4302742CCB300C16F0F /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,18 @@
 		A58CD4092742CA1800C16F0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A58CD40C2742CA1800C16F0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A58CD40E2742CA1800C16F0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A58CD4182742CB1700C16F0F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A58CD41A2742CB6D00C16F0F /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		A58CD41C2742CB9000C16F0F /* Accumulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accumulation.swift; sourceTree = "<group>"; };
+		A58CD41F2742CCB100C16F0F /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		A58CD4202742CCB100C16F0F /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		A58CD4212742CCB100C16F0F /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
+		A58CD4222742CCB100C16F0F /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		A58CD4232742CCB200C16F0F /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		A58CD4242742CCB200C16F0F /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
+		A58CD4252742CCB200C16F0F /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
+		A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +80,67 @@
 		A58CD3FF2742CA1400C16F0F /* Budget_Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A58CD4002742CA1400C16F0F /* AppDelegate.swift */,
-				A58CD4022742CA1400C16F0F /* SceneDelegate.swift */,
-				A58CD4042742CA1400C16F0F /* ViewController.swift */,
-				A58CD4062742CA1400C16F0F /* Main.storyboard */,
-				A58CD4092742CA1800C16F0F /* Assets.xcassets */,
-				A58CD40B2742CA1800C16F0F /* LaunchScreen.storyboard */,
-				A58CD40E2742CA1800C16F0F /* Info.plist */,
+				A58CD4172742CACF00C16F0F /* Controllers */,
+				A58CD4162742CABC00C16F0F /* Views */,
+				A58CD4152742CA9D00C16F0F /* Models */,
+				A58CD4142742CA5400C16F0F /* Tech */,
 			);
 			path = Budget_Helper;
+			sourceTree = "<group>";
+		};
+		A58CD4142742CA5400C16F0F /* Tech */ = {
+			isa = PBXGroup;
+			children = (
+				A58CD41E2742CC7A00C16F0F /* Fonts */,
+				A58CD4002742CA1400C16F0F /* AppDelegate.swift */,
+				A58CD4022742CA1400C16F0F /* SceneDelegate.swift */,
+				A58CD40E2742CA1800C16F0F /* Info.plist */,
+				A58CD4092742CA1800C16F0F /* Assets.xcassets */,
+			);
+			path = Tech;
+			sourceTree = "<group>";
+		};
+		A58CD4152742CA9D00C16F0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A58CD4182742CB1700C16F0F /* User.swift */,
+				A58CD41A2742CB6D00C16F0F /* Action.swift */,
+				A58CD41C2742CB9000C16F0F /* Accumulation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A58CD4162742CABC00C16F0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A58CD40B2742CA1800C16F0F /* LaunchScreen.storyboard */,
+				A58CD4062742CA1400C16F0F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A58CD4172742CACF00C16F0F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A58CD4042742CA1400C16F0F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A58CD41E2742CC7A00C16F0F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A58CD4212742CCB100C16F0F /* SF-Pro-Rounded-Black.otf */,
+				A58CD4252742CCB200C16F0F /* SF-Pro-Rounded-Bold.otf */,
+				A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */,
+				A58CD4242742CCB200C16F0F /* SF-Pro-Rounded-Light.otf */,
+				A58CD4232742CCB200C16F0F /* SF-Pro-Rounded-Medium.otf */,
+				A58CD41F2742CCB100C16F0F /* SF-Pro-Rounded-Regular.otf */,
+				A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */,
+				A58CD4202742CCB100C16F0F /* SF-Pro-Rounded-Thin.otf */,
+				A58CD4222742CCB100C16F0F /* SF-Pro-Rounded-Ultralight.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +202,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58CD40D2742CA1800C16F0F /* LaunchScreen.storyboard in Resources */,
+				A58CD42D2742CCB200C16F0F /* SF-Pro-Rounded-Light.otf in Resources */,
+				A58CD4282742CCB200C16F0F /* SF-Pro-Rounded-Regular.otf in Resources */,
+				A58CD42A2742CCB200C16F0F /* SF-Pro-Rounded-Black.otf in Resources */,
+				A58CD42C2742CCB200C16F0F /* SF-Pro-Rounded-Medium.otf in Resources */,
 				A58CD40A2742CA1800C16F0F /* Assets.xcassets in Resources */,
+				A58CD4292742CCB200C16F0F /* SF-Pro-Rounded-Thin.otf in Resources */,
+				A58CD4302742CCB300C16F0F /* SF-Pro-Rounded-Semibold.otf in Resources */,
+				A58CD42B2742CCB200C16F0F /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				A58CD4082742CA1400C16F0F /* Main.storyboard in Resources */,
+				A58CD42F2742CCB300C16F0F /* SF-Pro-Rounded-Heavy.otf in Resources */,
+				A58CD42E2742CCB300C16F0F /* SF-Pro-Rounded-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +224,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A58CD4052742CA1400C16F0F /* ViewController.swift in Sources */,
+				A58CD4192742CB1700C16F0F /* User.swift in Sources */,
+				A58CD41D2742CB9000C16F0F /* Accumulation.swift in Sources */,
 				A58CD4012742CA1400C16F0F /* AppDelegate.swift in Sources */,
+				A58CD41B2742CB6D00C16F0F /* Action.swift in Sources */,
 				A58CD4032742CA1400C16F0F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,12 +379,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Z8C557VYL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Budget_Helper/Info.plist;
+				INFOPLIST_FILE = Budget_Helper/Tech/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +396,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,12 +409,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Z8C557VYL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Budget_Helper/Info.plist;
+				INFOPLIST_FILE = Budget_Helper/Tech/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +426,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
