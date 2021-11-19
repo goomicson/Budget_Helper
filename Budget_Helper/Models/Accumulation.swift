@@ -17,8 +17,8 @@ struct Accumulation {
     
     var exchange: Exchange
     
-    var percent: Double {
-        round(currentAmount / totalAmount * 100) / 100
+    var percent: Float {
+        Float(round(currentAmount / totalAmount * 100) / 100)
     }
     var monthlyPayment: Double {
         totalAmount / Double(duration)
