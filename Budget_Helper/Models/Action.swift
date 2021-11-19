@@ -8,7 +8,7 @@
 import Foundation
 
 struct Action {
-    let name: String
+    var name: String = ""
     let amount: Double
     let direction: Bool // True - profit, False - less
     let startDate: Date
@@ -44,13 +44,15 @@ extension Action {
          switch event.frequency {
              
          case .none:
+             repeatEvents.append(event)
              return repeatEvents
          case .week:
              repeatEvents.append(event)
-             while repeatEvents.last!.startDate < endDate {
-                 let newEvent = Action(name: event.name, amount: event.amount,
+             var newEvent = event
+             while newEvent.startDate < endDate {
+                 newEvent = Action(name: event.name, amount: event.amount,
                                         direction: event.direction,
-                                        startDate: Date.init(timeInterval: week , since: repeatEvents.last!.startDate),
+                                        startDate: Date.init(timeInterval: week , since: newEvent.startDate),
                                         frequency: event.frequency,
                                         endDate: endDate)
                  if newEvent.startDate > endDate {break}
@@ -58,34 +60,34 @@ extension Action {
              }
          case .month:
              repeatEvents.append(event)
-             while repeatEvents.last!.startDate < endDate {
-                 var newEvent = event
-                 let eventMonth = calendar.component(.month, from: repeatEvents.last!.startDate)
+             var newEvent = event
+             while newEvent.startDate < endDate {
+                 let eventMonth = calendar.component(.month, from: newEvent.startDate)
                  switch eventMonth {
                  case 1, 3, 5, 7, 8, 10, 12:
                     newEvent = Action(name: event.name, amount: event.amount,
                                            direction: event.direction,
-                                           startDate: Date.init(timeInterval: longMonth , since: repeatEvents.last!.startDate),
+                                           startDate: Date.init(timeInterval: longMonth , since: newEvent.startDate),
                                            frequency: event.frequency,
                                            endDate: endDate)
                 case 4, 6, 9, 11:
                     newEvent = Action(name: event.name, amount: event.amount,
                                            direction: event.direction,
-                                           startDate: Date.init(timeInterval: shortMonth , since: repeatEvents.last!.startDate),
+                                           startDate: Date.init(timeInterval: shortMonth , since: newEvent.startDate),
                                            frequency: event.frequency,
                                            endDate: endDate)
                 default:
-                    let eventYear = calendar.component(.year, from: repeatEvents.last!.startDate)
+                    let eventYear = calendar.component(.year, from: newEvent.startDate)
                     if eventYear % 4 == 0 {
                         newEvent = Action(name: event.name, amount: event.amount,
                                                direction: event.direction,
-                                               startDate: Date.init(timeInterval: leapFebruary , since: repeatEvents.last!.startDate),
+                                               startDate: Date.init(timeInterval: leapFebruary , since: newEvent.startDate),
                                                frequency: event.frequency,
                                                endDate: endDate)
                     } else {
                         newEvent = Action(name: event.name, amount: event.amount,
                                            direction: event.direction,
-                                           startDate: Date.init(timeInterval: February , since: repeatEvents.last!.startDate),
+                                           startDate: Date.init(timeInterval: February , since: newEvent.startDate),
                                            frequency: event.frequency,
                                            endDate: endDate)
                     }
@@ -95,20 +97,21 @@ extension Action {
              }
         case .year:
             repeatEvents.append(event)
-            while repeatEvents.last!.startDate < endDate {
+             var newEvent = event
+            while newEvent.startDate < endDate {
                 let eventYear = calendar.component(.year, from: repeatEvents.last!.startDate)
                 if eventYear % 4 == 0 {
-                    let newEvent = Action(name: event.name, amount: event.amount,
+                    newEvent = Action(name: event.name, amount: event.amount,
                                            direction: event.direction,
-                                           startDate: Date.init(timeInterval: leapYear , since: repeatEvents.last!.startDate),
+                                           startDate: Date.init(timeInterval: leapYear , since: newEvent.startDate),
                                            frequency: event.frequency,
                                            endDate: endDate)
                     if newEvent.startDate > endDate {break}
                     repeatEvents.append(newEvent)
                 } else {
-                    let newEvent = Action(name: event.name, amount: event.amount,
+                    newEvent = Action(name: event.name, amount: event.amount,
                                            direction: event.direction,
-                                           startDate: Date.init(timeInterval: year , since: repeatEvents.last!.startDate),
+                                           startDate: Date.init(timeInterval: year , since: newEvent.startDate),
                                            frequency: event.frequency,
                                            endDate: endDate)
                     if newEvent.startDate > endDate {break}
@@ -119,6 +122,7 @@ extension Action {
          return repeatEvents
      }
 }
+
 
 extension Action {
     static func getData() -> [Action] {
