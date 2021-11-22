@@ -8,12 +8,13 @@
 import Foundation
 
 struct Action {
-    var name: String = ""
     let amount: Double
     let direction: Bool // True - profit, False - less
     let startDate: Date
     let frequency: Frequency
+    let exchange: Exchange
     
+    var name: String = ""
     var endDate: Date? = nil
 }
 
@@ -26,12 +27,22 @@ extension Action {
     }
 }
 
+//MARK: - Comparable
+
+extension Action: Comparable {
+    static func < (lhs: Action, rhs: Action) -> Bool {
+        lhs.startDate < rhs.startDate
+    }
+}
+
+//MARK: - GetRepeatAction
+// This function returns an array of repeating actions
+
 extension Action {
     
      static func getRepeatAction(_ event: Action) -> [Action] {
          let calendar = Calendar.current
          var repeatEvents: [Action] = []
-         let endDate: Date = event.endDate ?? Date.init(timeInterval: 60 * 60 * 24 * 365 * 80, since: event.startDate)
          let week: TimeInterval = 60 * 60 * 24 * 7
          let longMonth: TimeInterval = 60 * 60 * 24 * 31
          let shortMonth: TimeInterval = 60 * 60 * 24 * 30
@@ -39,6 +50,7 @@ extension Action {
          let leapFebruary: TimeInterval = 60 * 60 * 24 * 29
          let year: TimeInterval = 60 * 60 * 24 * 365
          let leapYear: TimeInterval = 60 * 60 * 24 * 366
+         let endDate: Date = event.endDate ?? Date.init(timeInterval: year * 80, since: event.startDate)
          
          
          switch event.frequency {
@@ -50,11 +62,12 @@ extension Action {
              repeatEvents.append(event)
              var newEvent = event
              while newEvent.startDate < endDate {
-                 newEvent = Action(name: event.name, amount: event.amount,
-                                        direction: event.direction,
-                                        startDate: Date.init(timeInterval: week , since: newEvent.startDate),
-                                        frequency: event.frequency,
-                                        endDate: endDate)
+                 newEvent = Action(amount: event.amount,
+                                       direction: event.direction,
+                                       startDate: Date.init(timeInterval: week, since: repeatEvents.last!.startDate),
+                                       frequency: event.frequency,
+                                       exchange: event.exchange,
+                                       endDate: endDate)
                  if newEvent.startDate > endDate {break}
                      repeatEvents.append(newEvent)
              }
@@ -65,31 +78,35 @@ extension Action {
                  let eventMonth = calendar.component(.month, from: newEvent.startDate)
                  switch eventMonth {
                  case 1, 3, 5, 7, 8, 10, 12:
-                    newEvent = Action(name: event.name, amount: event.amount,
-                                           direction: event.direction,
-                                           startDate: Date.init(timeInterval: longMonth , since: newEvent.startDate),
-                                           frequency: event.frequency,
-                                           endDate: endDate)
+                     newEvent = Action(amount: event.amount,
+                                       direction: event.direction,
+                                       startDate: Date.init(timeInterval: longMonth, since: repeatEvents.last!.startDate),
+                                       frequency: event.frequency,
+                                       exchange: event.exchange,
+                                       endDate: endDate)
                 case 4, 6, 9, 11:
-                    newEvent = Action(name: event.name, amount: event.amount,
-                                           direction: event.direction,
-                                           startDate: Date.init(timeInterval: shortMonth , since: newEvent.startDate),
-                                           frequency: event.frequency,
-                                           endDate: endDate)
+                     newEvent = Action(amount: event.amount,
+                                       direction: event.direction,
+                                       startDate: Date.init(timeInterval: shortMonth, since: repeatEvents.last!.startDate),
+                                       frequency: event.frequency,
+                                       exchange: event.exchange,
+                                       endDate: endDate)
                 default:
                     let eventYear = calendar.component(.year, from: newEvent.startDate)
                     if eventYear % 4 == 0 {
-                        newEvent = Action(name: event.name, amount: event.amount,
-                                               direction: event.direction,
-                                               startDate: Date.init(timeInterval: leapFebruary , since: newEvent.startDate),
-                                               frequency: event.frequency,
-                                               endDate: endDate)
+                        newEvent = Action(amount: event.amount,
+                                          direction: event.direction,
+                                          startDate: Date.init(timeInterval: leapFebruary, since: repeatEvents.last!.startDate),
+                                          frequency: event.frequency,
+                                          exchange: event.exchange,
+                                          endDate: endDate)
                     } else {
-                        newEvent = Action(name: event.name, amount: event.amount,
-                                           direction: event.direction,
-                                           startDate: Date.init(timeInterval: February , since: newEvent.startDate),
-                                           frequency: event.frequency,
-                                           endDate: endDate)
+                        newEvent = Action(amount: event.amount,
+                                          direction: event.direction,
+                                          startDate: Date.init(timeInterval: February, since: repeatEvents.last!.startDate),
+                                          frequency: event.frequency,
+                                          exchange: event.exchange,
+                                          endDate: endDate)
                     }
                  }
                  if newEvent.startDate > endDate {break}
@@ -101,19 +118,21 @@ extension Action {
             while newEvent.startDate < endDate {
                 let eventYear = calendar.component(.year, from: repeatEvents.last!.startDate)
                 if eventYear % 4 == 0 {
-                    newEvent = Action(name: event.name, amount: event.amount,
-                                           direction: event.direction,
-                                           startDate: Date.init(timeInterval: leapYear , since: newEvent.startDate),
-                                           frequency: event.frequency,
-                                           endDate: endDate)
+                    newEvent = Action(amount: event.amount,
+                                          direction: event.direction,
+                                          startDate: Date.init(timeInterval: leapYear, since: repeatEvents.last!.startDate),
+                                          frequency: event.frequency,
+                                          exchange: event.exchange,
+                                          endDate: endDate)
                     if newEvent.startDate > endDate {break}
                     repeatEvents.append(newEvent)
                 } else {
-                    newEvent = Action(name: event.name, amount: event.amount,
-                                           direction: event.direction,
-                                           startDate: Date.init(timeInterval: year , since: newEvent.startDate),
-                                           frequency: event.frequency,
-                                           endDate: endDate)
+                    newEvent = Action(amount: event.amount,
+                                          direction: event.direction,
+                                          startDate: Date.init(timeInterval: year, since: repeatEvents.last!.startDate),
+                                          frequency: event.frequency,
+                                          exchange: event.exchange,
+                                          endDate: endDate)
                     if newEvent.startDate > endDate {break}
                     repeatEvents.append(newEvent)
                 }
@@ -123,6 +142,7 @@ extension Action {
      }
 }
 
+//MARK: - GetData
 
 extension Action {
     static func getData() -> [Action] {
@@ -137,12 +157,14 @@ extension Action {
                 dates.append(formattedDate)
             }
         }
-        let actions = [Action(name: "First Action", amount: 10000, direction: true, startDate: dates[0], frequency: .week, endDate: dates[1]),
-                       Action(name: "Second Action", amount: 100000, direction: false, startDate: dates[2], frequency: .year, endDate: dates[3]),
-                       Action(name: "Third Action", amount: 1453839, direction: true, startDate: dates[4], frequency: .month, endDate: dates[5]),
-                       Action(name: "Fourth Action", amount: 136578, direction: false, startDate: dates[6], frequency: .month, endDate: dates[7]),
-                       Action(name: "Fifth Action", amount: 236793, direction: true, startDate: Date(), frequency: .none),
-                       Action(name: "Sixth Action", amount: 265, direction: false, startDate: Date(), frequency: .month)]
+        let actions = [
+            Action(amount: 10000, direction: true, startDate: dates[0], frequency: .week, exchange: .euro, name: "", endDate: dates[1]),
+            Action(amount: 4500, direction: false, startDate: dates[2], frequency: .year, exchange: .dollar, name: "Netflix Subscription", endDate: dates[3]),
+            Action(amount: 1453839, direction: true, startDate: dates[4], frequency: .month, exchange: .ruble, name: "", endDate: dates[5]),
+            Action(amount: 5000, direction: false, startDate: dates[6], frequency: .month, exchange: .euro, name: "Parking", endDate: dates[7]),
+            Action(amount: 236793, direction: true, startDate: Date(), frequency: .none, exchange: .dollar),
+            Action(amount: 169, direction: false, startDate: Date(), frequency: .month, exchange: .ruble, name: "Apple Music")
+        ]
         return actions
     }
 }

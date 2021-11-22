@@ -25,6 +25,8 @@
 		A58CD42F2742CCB300C16F0F /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */; };
 		A58CD4302742CCB300C16F0F /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */; };
 		A58CD4332742D86800C16F0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CD4322742D86800C16F0F /* User.swift */; };
+		B86E79F3274BF2CF00B487E0 /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E79F2274BF2CF00B487E0 /* Exchange.swift */; };
+		B86E79F5274BF38900B487E0 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E79F4274BF38900B487E0 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		A58CD4262742CCB200C16F0F /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
 		A58CD4272742CCB200C16F0F /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		A58CD4322742D86800C16F0F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B86E79F2274BF2CF00B487E0 /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
+		B86E79F4274BF38900B487E0 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				A58CD41A2742CB6D00C16F0F /* Action.swift */,
 				A58CD41C2742CB9000C16F0F /* Accumulation.swift */,
 				A58CD4322742D86800C16F0F /* User.swift */,
+				B86E79F2274BF2CF00B487E0 /* Exchange.swift */,
+				B86E79F4274BF38900B487E0 /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,12 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86E79F5274BF38900B487E0 /* Users.swift in Sources */,
 				A58CD4052742CA1400C16F0F /* ViewController.swift in Sources */,
 				A58CD41D2742CB9000C16F0F /* Accumulation.swift in Sources */,
 				A58CD4332742D86800C16F0F /* User.swift in Sources */,
 				A58CD4012742CA1400C16F0F /* AppDelegate.swift in Sources */,
 				A58CD41B2742CB6D00C16F0F /* Action.swift in Sources */,
 				A58CD4032742CA1400C16F0F /* SceneDelegate.swift in Sources */,
+				B86E79F3274BF2CF00B487E0 /* Exchange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

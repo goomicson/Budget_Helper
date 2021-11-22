@@ -9,44 +9,40 @@ import Foundation
 
 struct Accumulation {
     let name: String
-    let totalAmount: Double
+    let totalAmount: Int
     let dayOfProfit: Date
-
-    var currentAmount: Double = 0
-    var duration: Int
     
+    var duration: Int
     var exchange: Exchange
+    var currentAmount: Double = 0
     
     var percent: Float {
-        Float(round(currentAmount / totalAmount * 100) / 100)
+        Float((currentAmount / Double(totalAmount) * 100) / 100)
+        
     }
-    var monthlyPayment: Double {
-        totalAmount / Double(duration)
+    var monthlyPayment: Int {
+        totalAmount / duration
     }
 }
 
-extension Accumulation {
-    enum Exchange {
-        case dollar
-        case euro
-        case ruble
-    }
-}
+//MARK: - GetData
 
 extension Accumulation {
     static func getData() -> [Accumulation] {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let datesString = ["22.11.2021", "23.12.2021", "25.08.1998"]
+        dateFormatter.dateFormat = "dd-MM-yy"
+        let dateString = ["09.09.21", "09.12.21", "09.01.22"]
+        
         var dates: [Date] = []
-        for datesString in datesString {
-            if let date = dateFormatter.date(from: datesString) {
-                dates.append(date)
+        
+        for date in dateString {
+            if let formattedDate = dateFormatter.date(from: date) {
+                dates.append(formattedDate)
             }
         }
-        let accumulations = [Accumulation(name: "First Accumulation", totalAmount: 100000, dayOfProfit: dates[0], currentAmount: 50, duration: 12, exchange: .ruble),
-                             Accumulation(name: "Second Accumulation", totalAmount: 18000, dayOfProfit: dates[1], duration: 15, exchange: .dollar),
-                             Accumulation(name: "Third", totalAmount: 1000000, dayOfProfit: dates[2], currentAmount: 2, duration: 120, exchange: .euro)]
+        let accumulations = [Accumulation(name: "Audi Q7", totalAmount: 100000, dayOfProfit: dates[0], duration: 24, exchange: .dollar, currentAmount: 73500),
+                             Accumulation(name: "Macbook Pro 14", totalAmount: 5000, dayOfProfit: dates[1], duration: 18, exchange: .dollar),
+                             Accumulation(name: "Trip to Australia", totalAmount: 12000, dayOfProfit: dates[2], duration: 120, exchange: .dollar, currentAmount: 5750)]
         return accumulations
     }
 }

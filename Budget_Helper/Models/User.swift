@@ -9,12 +9,16 @@ import Foundation
 
 struct User {
     let name: String
-    let account: Double
+    var account: Double
+    var exchange: Exchange
 }
 
-extension User {
-    static func getData() -> User {
-        let user = User(name: "Richard Gere", account: 125000000)
-        return user
-    }
-}
+////MARK: - GetData
+//
+//extension User {
+//    static func getData() -> User {
+//        let user = User(name: "Richard Gere", account: 12500000, exchange: .ruble)
+//        return user
+//    }
+//}
+
