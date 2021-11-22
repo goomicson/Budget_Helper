@@ -64,7 +64,7 @@ extension Action {
              while newEvent.startDate < endDate {
                  newEvent = Action(amount: event.amount,
                                        direction: event.direction,
-                                       startDate: Date.init(timeInterval: week, since: repeatEvents.last!.startDate),
+                                       startDate: Date.init(timeInterval: week, since: newEvent.startDate),
                                        frequency: event.frequency,
                                        exchange: event.exchange,
                                        endDate: endDate)
@@ -80,14 +80,14 @@ extension Action {
                  case 1, 3, 5, 7, 8, 10, 12:
                      newEvent = Action(amount: event.amount,
                                        direction: event.direction,
-                                       startDate: Date.init(timeInterval: longMonth, since: repeatEvents.last!.startDate),
+                                       startDate: Date.init(timeInterval: longMonth, since: newEvent.startDate),
                                        frequency: event.frequency,
                                        exchange: event.exchange,
                                        endDate: endDate)
                 case 4, 6, 9, 11:
                      newEvent = Action(amount: event.amount,
                                        direction: event.direction,
-                                       startDate: Date.init(timeInterval: shortMonth, since: repeatEvents.last!.startDate),
+                                       startDate: Date.init(timeInterval: shortMonth, since: newEvent.startDate),
                                        frequency: event.frequency,
                                        exchange: event.exchange,
                                        endDate: endDate)
@@ -96,14 +96,14 @@ extension Action {
                     if eventYear % 4 == 0 {
                         newEvent = Action(amount: event.amount,
                                           direction: event.direction,
-                                          startDate: Date.init(timeInterval: leapFebruary, since: repeatEvents.last!.startDate),
+                                          startDate: Date.init(timeInterval: leapFebruary, since: newEvent.startDate),
                                           frequency: event.frequency,
                                           exchange: event.exchange,
                                           endDate: endDate)
                     } else {
                         newEvent = Action(amount: event.amount,
                                           direction: event.direction,
-                                          startDate: Date.init(timeInterval: February, since: repeatEvents.last!.startDate),
+                                          startDate: Date.init(timeInterval: February, since: newEvent.startDate),
                                           frequency: event.frequency,
                                           exchange: event.exchange,
                                           endDate: endDate)
@@ -116,11 +116,11 @@ extension Action {
             repeatEvents.append(event)
              var newEvent = event
             while newEvent.startDate < endDate {
-                let eventYear = calendar.component(.year, from: repeatEvents.last!.startDate)
+                let eventYear = calendar.component(.year, from: newEvent.startDate)
                 if eventYear % 4 == 0 {
                     newEvent = Action(amount: event.amount,
                                           direction: event.direction,
-                                          startDate: Date.init(timeInterval: leapYear, since: repeatEvents.last!.startDate),
+                                          startDate: Date.init(timeInterval: leapYear, since: newEvent.startDate),
                                           frequency: event.frequency,
                                           exchange: event.exchange,
                                           endDate: endDate)
@@ -129,7 +129,7 @@ extension Action {
                 } else {
                     newEvent = Action(amount: event.amount,
                                           direction: event.direction,
-                                          startDate: Date.init(timeInterval: year, since: repeatEvents.last!.startDate),
+                                          startDate: Date.init(timeInterval: year, since: newEvent.startDate),
                                           frequency: event.frequency,
                                           exchange: event.exchange,
                                           endDate: endDate)
